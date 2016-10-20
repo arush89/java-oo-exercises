@@ -3,7 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import junit.framework.TestCase;
-
+ 
 public class StudentAndCourseTest extends TestCase {
 
 	String s1 = "either your getName() method isn't doing its job or you're not " +
@@ -21,7 +21,8 @@ public class StudentAndCourseTest extends TestCase {
 	public void testStudentInit() {
 		Student s = new Student("Doug", "Shook", 111111);
 		assertEquals("Doug Shook", s.getName());
-		assertEquals(111111, s.getStudentID());
+		
+		assertEquals( 111111, s.getStudentID());
 		//No credits, should be a freshman, no GPA
 		assertEquals(0.0, s.getGPA());
 		assertEquals(0, s.getCredits());
@@ -33,7 +34,7 @@ public class StudentAndCourseTest extends TestCase {
 			Student s3 = new Student("" + a, "" + b, c);
 			assertEquals(s1, a + " " + b, s3.getName());
 			assertEquals(s2, 0.0, s3.getGPA());
-			assertEquals(s4, 0, s3.getCredits());
+			assertEquals(s4, 0, (int)s3.getCredits());
 			assertEquals(s5, "Freshman", s3.getClassStanding());
 		}
 	}
@@ -230,3 +231,4 @@ public class StudentAndCourseTest extends TestCase {
 
 
 }
+
